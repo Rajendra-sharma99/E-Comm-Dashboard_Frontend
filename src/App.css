@@ -1,38 +1,137 @@
-.App {
+/* .App {
+  background-color: blanchedalmond;
+  width: 100%;
+} */
+/* App.css */
+
+body {
+  background-color: blanchedalmond;
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+  width: 100%;
+}
+
+
+.nav-ul li {
+  display: inline-block;
+  padding: 10px;
+}
+
+.nav-ul{
+  margin: 0;
+  padding: 2px;
+  background: aqua;
+  text-align: left;
+}
+.nav-right{
+  text-align: right;
+}
+
+ /* products */
+ .product-list {
+  text-align: center;
+  margin-top:15px;
+
+}
+.product-list ul li {
+  display: inline-block; /* Display as table cell */
+  border: 1px solid green;
+  padding: 5px;
+  width: 150px;
+  text-align: center; /* Center align content */
+  vertical-align: middle; /* Vertically align content */
+}
+.product-list ul{
+  margin: 0px;
+}
+
+.home-container {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.banner-image {
+  width: 60%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.center-text {
+  text-align: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+
+.nav-ul li a{
+  text-decoration: none;
+}
+.footer {
+ position: absolute;
+ bottom: 0;
+ text-align: center;
+ width: 100%;
+ height: 10%;
+ background-color: skyblue;
+}
+.register{
+  padding-left: 210px;
+}
+.inputBox {
+  display: block;
+  padding: 10px;
+  width: 500px;
+  padding-left: 50px;
+}
+.register-top{
+  padding-left: 450px;
 }
 
-.App-link {
-  color: #61dafb;
+.signupbtn{
+  display: block;
+  padding: 10px;
+  width: 560px;
+  padding-left: 50px;
+
+  background-color: green;
+  color: white; /* Text color */
+  border: none; /* Remove border */
+  padding: 10px 20px; /* Adjust padding as needed */
+  cursor: pointer; /* Show pointer cursor on hover */
+  border-radius: 5px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.operation-button {
+  display: block;
+  padding: 10px;
+  width: 150px;
+  padding-left: 50px;
+
+  background-color: green;
+  color: white; /* Text color */
+  border: none; /* Remove border */
+  padding: 10px 20px; /* Adjust padding as needed */
+  cursor: pointer; /* Show pointer cursor on hover */
+  border-radius: 5px;
+}
+.operation-button a {
+  color: white; /* Setting the text color of the link to white */
+  text-decoration: none; /* Removing underline */
+}
+
+.Home-btn{
+  display: block;
+  padding: 10px;
+  width: 600px;
+  padding-left: 50px;
+
+  background-color: green;
+  color: white; /* Text color */
+  border: none; /* Remove border */
+  padding: 10px 20px; /* Adjust padding as needed */
+  cursor: pointer; /* Show pointer cursor on hover */
+  border-radius: 5px;
+}
+
+.search-product {
+  width: 400px;
+  margin: 20px;
+  height: 40px;
+  border: 1px solid red;
+  padding-left: 20px;
 }
