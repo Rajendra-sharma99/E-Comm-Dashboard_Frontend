@@ -15,7 +15,7 @@ const SignUp = () => {
     useEffect(() => {
         const auth = localStorage.getItem('user');
         if (auth) {
-            navigate('/');
+            navigate('/product');
         }
     }, [navigate]); // Only re-run effect if navigate changes
 
@@ -67,6 +67,9 @@ const SignUp = () => {
             }
             
 
+
+
+            
             let result = await fetch('https://e-comm-dashboard-backend-g4ol.onrender.com/register', {
                 method: 'post',
                 body: JSON.stringify({ name, email, password, confirmPassword }),
@@ -88,7 +91,7 @@ const SignUp = () => {
             // once thw sign has done then data will save in localstorgae and no need to again signup
             localStorage.setItem("user", JSON.stringify(result));
             if (result) {
-                navigate('/');
+                navigate('/product');
             }
 
         } catch (error) {
