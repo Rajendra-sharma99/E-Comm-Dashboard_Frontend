@@ -11,7 +11,11 @@ const ProductList = () => {
 
 
     const getProducts = async () => {
-        let result = await fetch('https://e-comm-dashboard-backend-g4ol.onrender.com/products');
+        let result = await fetch('https://e-comm-dashboard-backend-g4ol.onrender.com/products', {
+            headers: {
+                authorization: `bearer ${JSON.parse(localStorage.getItem('token'))}`
+            }
+        });
         result = await result.json();
         setProducts(result);
     }
@@ -24,13 +28,17 @@ const ProductList = () => {
         if (confirmDelete) {
             try {
                 let result = await fetch(`https://e-comm-dashboard-backend-g4ol.onrender.com/product/${id}`, {
-                    method: "DELETE"
+                    method: "DELETE",
+                    headers:{
+                        authorization: `bearer ${JSON.parse(localStorage.getItem('token'))}`
+                    }
                 });
                 result = await result.json();
                 if (result) {
                     alert("Record is Sucessfully Deleted");
                     getProducts(); // Show Updated List
                 }
+
             } catch (error) {
                 console.error('Error deleting product:', error);
             }
@@ -43,7 +51,13 @@ const ProductList = () => {
 
         let key = Event.target.value;
         if (key) {
-            let result = await fetch(`https://e-comm-dashboard-backend-g4ol.onrender.com/search/${key}`);
+
+            let result = await fetch(`https://e-comm-dashboard-backend-g4ol.onrender.com/search/${key}`, {
+                headers: {
+                    authorization: `bearer ${JSON.parse(localStorage.getItem('token'))}`
+                }
+            });
+
             result = await result.json();
             if (result) {
                 setProducts(result);
@@ -78,7 +92,7 @@ const ProductList = () => {
             </ul>
 
             {
-               products.length > 0 ? products.map((product, index) => (
+                products.length > 0 ? products.map((product, index) => (
                     <ul key={index}>
                         <li>{index + 1}</li>
                         <li>{product.name}</li>
@@ -95,7 +109,7 @@ const ProductList = () => {
 
                     </ul>
                 ))
-                : <h1>Enter Details Result Not Found</h1>
+                    : <h1>Enter Details Result Not Found</h1>
             }
 
         </div>

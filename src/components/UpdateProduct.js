@@ -18,7 +18,11 @@ const UpdateProduct = () => {
       // This function will set data what ever is coming from products
     const getProductsDetails = async () => {
         try {
-            const result = await fetch(`https://e-comm-dashboard-backend-g4ol.onrender.com/product/${params.id}`);
+            const result = await fetch(`https://e-comm-dashboard-backend-g4ol.onrender.com/product/${params.id}`, {
+                headers:{
+                    authorization: `bearer ${JSON.parse(localStorage.getItem('token'))}`
+                }
+            });
             const data = await result.json();
 
             setName(data.name);
@@ -38,6 +42,7 @@ const UpdateProduct = () => {
                 method: 'PUT', // or 'PATCH' depending on your backend configuration
                 headers: {
                     'Content-Type': 'application/json',
+                    authorization: `bearer ${JSON.parse(localStorage.getItem('token'))}`
                 },
                 body: JSON.stringify({name, price, categry, company}),
             });

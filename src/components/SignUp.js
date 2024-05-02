@@ -89,7 +89,11 @@ const SignUp = () => {
             console.log(result);
 
             // once thw sign has done then data will save in localstorgae and no need to again signup
-            localStorage.setItem("user", JSON.stringify(result));
+            // localStorage.setItem("user", JSON.stringify(result));
+            localStorage.setItem("user", JSON.stringify(result.user));
+            localStorage.setItem("token", JSON.stringify(result.auth));
+
+
             if (result) {
                 navigate('/product');
             }
